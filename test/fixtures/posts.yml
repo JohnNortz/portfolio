@@ -1,0 +1,12 @@
+# Read about fixtures at
+# http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: TestPost1
+  title: TestPostNumber1
+  content: blank
+
+two:
+  name: TestPost2
+  title: TestPostNumber2
+  content: blank

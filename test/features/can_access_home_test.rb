@@ -1,8 +1,8 @@
 require "test_helper"
 
-describe "CanAccessHome", :capybara do
+describe "Can Access Home", :capybara do
   it "Home page has content" do
-    visit root_path
-    page.must_have_content "Hello World"
+    visit posts_path
+    page.must_have_content "Listing All"
     end
 end
