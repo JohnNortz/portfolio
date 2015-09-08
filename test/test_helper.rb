@@ -7,7 +7,7 @@ require "minitest/rails/capybara"
 
 # To add Capybara feature tests add `gem "minitest-rails-capybara"`
 # to the test group in the Gemfile and uncomment the following:
-
+#system 'rubocop'
 require 'capybara/poltergeist'
 include Capybara::DSL
 Capybara.register_driver :poltergeist do |config|

@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'capybara'
 gem 'minitest-rails'
+#gem 'minitest-reporters'
 gem 'poltergeist'
 gem 'foundation-rails'
 gem 'coffee-rails', '~> 4.1.0'
@@ -13,6 +14,8 @@ gem 'rake'
 gem 'sass-rails', '~> 5.0'
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
+gem 'travis'
+#gem 'rubocop'
 
 group :test do
   gem 'minitest-rails-capybara'
