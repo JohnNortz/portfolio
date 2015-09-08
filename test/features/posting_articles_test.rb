@@ -7,7 +7,6 @@ feature "Posting new posts" do
   scenario "the test posted a new post" do
     #post = Post.create(title: "Destructable Post", content: "Delete Me")   #FIXME  get old ID to check that new index doesnt contain old ID
     visit new_post_path
-    puts page.html
     find('#post_title').set 'New Test post title'
     fill_in 'post_content', with: 'Test post please ignore'
     click_on 'Create Post'
