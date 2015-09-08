@@ -1,14 +1,118 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Portfolio</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<%= yield %>
+    <title><%= content_for?(:title) ? yield(:title) : "John Nortz" %></title>
 
-</body>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+
+
+      <style type="text/css">body{font-family:'Raleway',Helvetica,Arial,sans-serif;font-weight:400;background-color:rgba(0,0,0,0.02);}.button{font-family:'Raleway',Helvetica,Arial,sans-serif;}.button-group li{padding-top:3%;}.button-group a{color:rgba(0,0,0,1);background-color:transparent;}.button-group a:hover{color:rgba(0,0,0,0.4);background-color:transparent;}.button-group{float:none;}@media only screen and (min-width: 40.063em) {.button-group{float:right;}}.namelogo{padding:20px 10px 0px 10px;}@media only screen and (min-width: 40.063em) {.namelogo{padding-bottom:20px;}}.namelogo h1{font-size:1.5em;font-weight:600;text-align:center;}@media only screen and (min-width: 40.063em) {.namelogo h1{font-size:16px;text-align:left;}}@media only screen and (min-width: 64.063em) {.namelogo h1{font-size:24px;text-align:left;}}.hero{background:url(http://placehold.it/900x800);background-size:cover;box-shadow:inset 0px 0px 0 2000px rgba(0,0,0,0.15);height:80%;}.intro-text{padding-top:40%;color:rgba(255,255,255,1);text-align:center;}@media only screen and (min-width: 40.063em) {.intro-text{padding-top:25%;}}@media only screen and (min-width: 64.063em) {.intro-text{padding-top:18%;}}.intro-text p{font-family:'Shadows Into Light',cursive;font-size:44px;}.about,.work,.contact{padding:50px 0 0 0;}.about img{width:250px;height:250px;border-radius:150px;-webkit-border-radius:150px;-moz-border-radius:150px;}.work img:hover{opacity:0.5;-webkit-transition:0.3s ease;-moz-transition:0.3s ease;-ms-transition:0.3s ease;-o-transition:0.3s ease;transition:0.3s ease;}.work li{height:140px;overflow:hidden;}hr{border:0;height:1px;background-image:-webkit-linear-gradient(left,rgba(0,0,0,0),rgba(0,0,0,0.75),rgba(0,0,0,0));background-image:-moz-linear-gradient(left,rgba(0,0,0,0),rgba(0,0,0,0.75),rgba(0,0,0,0));background-image:-ms-linear-gradient(left,rgba(0,0,0,0),rgba(0,0,0,0.75),rgba(0,0,0,0));background-image:-o-linear-gradient(left,rgba(0,0,0,0),rgba(0,0,0,0.75),rgba(0,0,0,0));opacity:0.8;}footer{padding:80px 0 10px 0;}footer a:hover{color:rgba(0,0,0,0.4);background-color:transparent;}</style>
+
+  <div class="row">
+        <div class="large-12 columns">
+          <div class="nav-bar right">
+           <ul class="button-group">
+             <li><a href="#" class="button">Home</a></li>
+             <li><a href="#" class="button">Blog</a></li>
+             <li><a href="#" class="button">Projects</a></li>
+             <li><a href="#" class="button">Contact</a></li>
+            </ul>
+          </div>
+          <h1>John Nortz</h1>
+          <hr/>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="large-12 columns">
+          <img src="<%= asset_path 'simpletile.jpg' %>">
+        </div>
+      </div>
+
+      <div class="row">
+        <hr>
+        <div class="large-8 columns">
+          <h4>Test</h4>
+          <p><%= yield %></p>
+          <i class="fi-social-twitter"></i>
+        </div>
+        <div class="large-4 columns">
+          <img src="<%= asset_path 'bot.png' %>">
+        </div>
+      </div>
+
+      <div class="row">
+        <hr>
+        <div class="large-12 columns">
+          <h4>Work</h4>
+          <p>Click on each image!</p>
+
+          <ul class="clearing-thumbs small-block-grid-1 medium-block-grid-2 large-block-grid-4" data-clearing>
+
+            <li>
+              <a href="<%= asset_path 'citycutaway.png' %>"><img data-caption="caption 2 here..." src="<%= asset_path 'citycutaway.png' %>"></a>
+            </li>
+            <li>
+              <a href="<%= asset_path 'csstock.jpg' %>">
+              <img data-caption="caption here..." src="<%= asset_path 'csstock.jpg' %>"></a>
+            </li>
+            <li>
+              <a href="<%= asset_path 'simpletile.jpg' %>"><img data-caption="caption 3 here..." src="<%= asset_path 'simpletile.jpg' %>"></a>
+            </li>
+            <li>
+              <a href="<%= asset_path 'bot.png' %>"><img data-caption="caption 4 here..." src="<%= asset_path 'bot.png' %>"></a>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="large-12 columns">
+          <hr>
+          <h4>Contact Me</h4>
+          <div class="large-4 columns">
+            Email: <a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="b6dbd3f6dbcfc6d9c4c2d0d9dadfd998d5d9db">[email protected]</a><script data-cfhash='f9e31' type="text/javascript">
+/* <![CDATA[ */!function(){try{var t="currentScript"in document?document.currentScript:function(){for(var t=document.getElementsByTagName("script"),e=t.length;e--;)if(t[e].getAttribute("data-cfhash"))return t[e]}();if(t&&t.previousSibling){var e,r,n,i,c=t.previousSibling,a=c.getAttribute("data-cfemail");if(a){for(e="",r=parseInt(a.substr(0,2),16),n=2;a.length-n;n+=2)i=parseInt(a.substr(n,2),16)^r,e+=String.fromCharCode(i);e=document.createTextNode(e),c.parentNode.replaceChild(e,c)}t.parentNode.removeChild(t);}}catch(u){}}()/* ]]> */</script>
+          </div>
+          <div class="large-4 columns">
+            Twitter: @twitterhandle
+          </div>
+          <div class="large-4 columns">
+            Phone: 555-555-1234
+          </div>
+        </div>
+      </div>
+
+      <footer class="row">
+          <div class="large-12 columns">
+            <hr/>
+            <div class="row">
+              <div class="large-6 columns">
+                <p>© Copyright no one at all. Go to town.</p>
+              </div>
+              <div class="large-6 columns">
+                <ul class="inline-list right">
+                  <li><a href="#">Link 1</a></li>
+                  <li><a href="#">Link 2</a></li>
+                  <li><a href="#">Link 3</a></li>
+                  <li><a href="#">Link 4</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+      </footer>
+
+  </body>
+
+
 </html>
