@@ -1,0 +1,10 @@
+# Read about fixtures at
+# http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+portfolio:
+  name: Port Fo Lio
+  technologies_used: Ruby, Rails, Zurb
+
+freelance work:
+  name: PortFree
+  technologies_used: Ruby, Rails, Farmville API, Automilker
