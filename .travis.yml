@@ -1,6 +1,7 @@
 language: ruby
 rvm:
   - 2.2.3
+  - 1.9.3
 
 env:
   global:
@@ -24,8 +25,10 @@ after_script:
 
 deploy:
   provider: heroku
-  app: your-app-name # optional if it's the same as your repo name
-  api_key: "YOUR API TOKEN"
+  api_key: "21fc8696-daae-4823-bfcd-304602df4bc5"
+  app: glacial-harbor-6938 # optional if it's the same as your repo name
+  on: Developer
+
 
 notifications:
   irc: "irc.freenode.org#travis"
