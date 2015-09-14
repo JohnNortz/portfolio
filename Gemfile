@@ -15,6 +15,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 gem 'travis'
+gem 'devise', '>= 3.4.0'
 #gem 'rubocop'
 
 group :test do
