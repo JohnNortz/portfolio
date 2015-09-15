@@ -8,7 +8,7 @@ feature "Creating A Project" do
     fill_in "Name", with: "New Test Project"
     fill_in "Technologies used", with: "Ruby, Rails, Git"
     click_on "Create Project"
-    puts page.text
+    #puts page.text
     page.must_have_content "New Test Project"
     assert page.has_css?(".notice"), "Expected a flash notice on this page, none found."
     page.status_code.must_equal 200
