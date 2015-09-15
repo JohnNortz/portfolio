@@ -4,6 +4,12 @@
   <strong>Title:</strong>
   <%= @post.title %>
 </p>
+<% if PostPolicy.new(current_user, @post).publish? %>
+  <p id="status">
+    <b>Status:</b>
+    <%= @post.published? ? "Published" : "Unpublished" %>
+  </p>
+<% end %>
 
 <p>
   <strong>Content:</strong>
