@@ -17,6 +17,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'travis'
 gem 'devise', '>= 3.4.0'
 gem "pundit"
+gem 'omniauth'
 gem 'omniauth-twitter'
 #gem "dotenv-rails"
 #gem 'rubocop'

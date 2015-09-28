@@ -263,6 +263,7 @@ DEPENDENCIES
   launchy
   minitest-rails
   minitest-rails-capybara
+  omniauth
   omniauth-twitter
   pg
   poltergeist

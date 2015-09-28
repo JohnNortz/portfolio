@@ -16,6 +16,17 @@
   <%= @post.content %>
 </p>
 
+<p>
+  <strong>Coments:</strong>
+  <%= @post.comments.each do |comment| %>
+    <div>
+      <%= comment.user_id.name %>
+    </div>
+    <%= comment.content %>
+
+  <% end %>
+</p>
+<%= link_to 'Post a Comment', new_post_comment_path(@post) %> |
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>|
 <%= link_to 'Destroy', @post, method: :delete %>

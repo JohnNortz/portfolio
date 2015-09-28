@@ -25,4 +25,14 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   # def after_omniauth_failure_path_for(scope)
   #   super(scope)
   # end
+
+  def all
+    user = User.from_omniauth(request.env["omniauth.auth"])
+    if user.persisted
+      sign_in_and_redirect user, notice: "Signed in successfully"
+    else
+      redirect_to new_user_registration_path
+    end
+  end
+  alias_method :twitter, :all
 end
