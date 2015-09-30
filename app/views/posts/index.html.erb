@@ -15,17 +15,33 @@
     Listing Posts:
 
     <% @posts.each do |post| %>
+    <% #policy_scope(@user.posts).each do |post| %>
+
       <tr>
+
+        <tr id="<%= dom_id(post) %>">
         <td><%= post.title %></td>
         <td><%= post.content %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Show', post %></td>
+          <% if ApplicationPolicy.new(current_user, @post).update? %>
+            <td><%= link_to 'Edit', edit_post_path(post) %></td>
+          <% end %>
+          <% if ApplicationPolicy.new(current_user, @post).destroy? %>
+            <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% end %>
+
+          <% if ApplicationPolicy.new(current_user, @post).new?%>
+          <%= link_to 'New Post', new_post_path %>
+          <% end %>
+        </tr>
+
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
+          <%= link_to 'New Post', new_post_path %>
 <br>
 
-<%= link_to 'New Post', new_post_path %>
+

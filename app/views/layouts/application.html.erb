@@ -42,36 +42,33 @@
         <hr>
         <div class="large-8 columns">
           <h4>Test</h4>
-
-
-<div id="user_nav">
-
-    <% flash.each do |key, value| %>
-      <div class="alert-box round <%= flash_class(key) %>">
-        <%= value %>
+        </div>
       </div>
-    <% end %>
-
-  <% if user_signed_in? %>
-    Signed in as <%= current_user.email %>. Not you?
-    <%= link_to "Sign out", destroy_user_session_path, method: :delete%>
-  <% else %>
-    <%= link_to "Sign up", new_user_registration_path %> or
-    <%= link_to "Sign in", new_user_session_path %>
-  <% end %>
-</div>
+      </style>
 
 
-          <p class="notice"><%= notice %></p>
-          <p class="alert"><%= alert %></p>
+      <div id="user_nav">
+      <div class="row">
+        <% flash.each do |key, value| %>
+          <div class="alert-box round <%= flash_class(key) %>">
+            <%= value %>
+          </div>
+        <% end %>
 
-          <p><%= yield %></p>
+        <% if user_signed_in? %>
+          Signed in as <%= current_user.email %>. Not you?
+          <%= link_to "Sign out", destroy_user_session_path, method: :delete%>
+        <% else %>
+          <%= link_to "Sign up", new_user_registration_path %> or
+          <%= link_to "Sign in", new_user_session_path %>
+
+        <% end %>
+        </div>
+        <div class="row">
+          <%= yield %>
           <i class="fi-social-twitter"></i>
         </div>
-        <div class="large-4 columns">
-          <img src="<%= asset_path 'bot.png' %>">
         </div>
-      </div>
 
       <div class="row">
         <hr>
