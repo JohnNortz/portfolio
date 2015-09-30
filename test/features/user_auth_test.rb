@@ -1,6 +1,7 @@
 require "test_helper"
 
 feature 'Users can create a new unique account' do
+
   scenario 'Users can register' do
     visit '/'
     click_on 'Sign up'
@@ -21,6 +22,21 @@ feature 'Users can create a new unique account' do
     fill_in 'Password', with: '12345'
     click_on 'Sign in!'
     page.must_have_content 'Invalid'
+  end
+
+  scenario 'User recieves an email when they sign-up' do
+    visit '/'
+    click_on 'Sign up'
+
+    fill_in 'Email', with: 'trueuser@example.com'
+    fill_in 'Password', with: 'password'
+    fill_in 'Password confirmation', with: 'password'
+    click_on 'Sign up!'
+
+    #email = UserMailer.welcome_email("testuser@example.com", "test user")
+    #email.must deliver_to("testuser@exampl.com")
+    puts page.text
+    UserMailer.deliveries.last.to.first.must_include "trueuser@example.com"
   end
 end
 

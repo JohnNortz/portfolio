@@ -4,7 +4,9 @@ require File.expand_path("../../config/environment", __FILE__)
 require "rails/test_help"
 require "minitest/rails"
 require "minitest/rails/capybara"
-
+require "email_spec"
+# require EmailSpec::Helpers
+# require EmailSpec::Matchers
 # To add Capybara feature tests add `gem "minitest-rails-capybara"`
 # to the test group in the Gemfile and uncomment the following:
 #system 'rubocop'

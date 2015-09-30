@@ -1,7 +1,6 @@
 class CommentsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
-  before_action :set_post_id, only: [:show, :create, :new]
-  before_action :set_user_id, only: [:show, :create, :new]
+  before_action :set_post
+  before_action :set_user
 
   # GET /comments
   # GET /comments.json
@@ -66,19 +65,15 @@ class CommentsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post
-      @post = Post.find(params[:id])
+      @post = Post.find(params[:post_id])
     end
 
-    def set_user_id
-      @user_id = current_user.id
-    end
-
-    def set_post_id
-      @post_id = @post
+    def set_user
+      @user_id = current_user || NullUser.new
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def post_params
-      params.require(:comment).permit(:content)
+    def comment_params
+      params.require(:comment).permit(:content, :post_id, :key => "value", user_id)
     end
 end

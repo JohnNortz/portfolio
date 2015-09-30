@@ -25,6 +25,7 @@ gem 'omniauth-twitter'
 group :test do
   gem 'minitest-rails-capybara'
   gem "launchy"
+  gem 'email_spec'
 end
 
 group :development, :test do

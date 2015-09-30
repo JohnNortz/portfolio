@@ -32,10 +32,9 @@ feature "Posting new posts" do
   end
 
   scenario "authors can't publish" do
+
     login(:author)
-
     visit new_post_path
-
     page.wont_have_field('published')
   end
 
