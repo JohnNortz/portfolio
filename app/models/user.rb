@@ -26,9 +26,10 @@ class User < ActiveRecord::Base
 end
 
 
-class NullUser
+class NullUser < User
   def initialize
     @role = "visitor"
+    @username = "Anon"
   end
 
   def editor?
