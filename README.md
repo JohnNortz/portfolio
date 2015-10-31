@@ -3,5 +3,5 @@ This site is meant to be an example of good web app coding practices as well as 
 
 Contributions:
 
-Special thanks to Bryan Ray for his help debugging my OmniAuth calls
+Special thanks to Brian Ray for his help debugging my OmniAuth calls
 
