@@ -19,7 +19,7 @@ gem 'devise', '>= 3.4.0'
 gem "pundit"
 gem 'omniauth'
 gem 'omniauth-twitter'
-#gem "dotenv-rails"
+gem "dotenv-rails"
 #gem 'rubocop'
 
 group :test do
