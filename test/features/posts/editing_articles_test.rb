@@ -2,13 +2,8 @@ require "test_helper"
 
 feature "Editing Post" do
   scenario "Has text body, submit and edit buttons" do
-    begin
-      login
-    rescue Exception => e
-      puts e.inspect
-    ensure
-      #puts "|||||||||||||||||||||||||||Edit post login|||||||||||||||||||||||||||||"
-    end
+
+    login(:editor)
     post = Post.create(title: "Editable Post", content: "change Me")   #FIXME  get old ID to check that new index doesnt contain old ID
     visit post_path(post)
 

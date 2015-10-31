@@ -16,15 +16,21 @@ gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 gem 'travis'
 gem 'devise', '>= 3.4.0'
+gem "pundit"
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem "dotenv-rails"
 #gem 'rubocop'
 
 group :test do
   gem 'minitest-rails-capybara'
   gem "launchy"
+  gem 'email_spec'
 end
 
 group :development, :test do
   gem 'byebug'
+  gem 'brakeman', :require => false
 end
 
 group :development do

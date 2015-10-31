@@ -19,6 +19,12 @@
     <%= f.label :content %><br>
     <%= f.text_field :content %>
   </div>
+  <%if PostPolicy.new(current_user, @post).publish?%>
+    <div class="field">
+      <%= f.label :published %>
+      <%= f.check_box :published %>
+    </div>
+  <% end %>
   <div class="actions">
     <%= f.submit %>
   </div>
